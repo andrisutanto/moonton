@@ -1,8 +1,12 @@
 import Authenticated from "@/Layouts/Authenticated/Index";
 import SubscriptionCard from "@/Components/SubscriptionCard";
+import {Head} from '@inertiajs/react';
 
 export default function SubscriptionPlan() {
-  return <Authenticated>
+  return(
+	<>
+	 <Head title='Subscription Plan' />
+	<Authenticated>
     <div className="mx-auto max-w-screen hidden lg:block">
         
             <div className="py-20 flex flex-col items-center">
@@ -38,5 +42,7 @@ export default function SubscriptionPlan() {
         
 
     </div>
-  </Authenticated>;
+  </Authenticated>
+  </>
+  );
 }
