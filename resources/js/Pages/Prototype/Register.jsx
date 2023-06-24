@@ -1,12 +1,12 @@
-import Input from '@/Components/TextInput';
 import Label from '@/Components/InputLabel';
+import Input from '@/Components/TextInput';
 import Button from '@/Components/Button';
-import {Link, Head} from '@inertiajs/react';
+import {Link,Head} from '@inertiajs/react';
 
-export default function Login() {
+export default function Register(){
   return (
     <>
-    <Head title='Sign In' />
+    <Head title='Sign Up' />
     <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
       <div className="fixed top-[-50px] hidden lg:block">
           <img src="/images/signup-image.png"
@@ -17,7 +17,7 @@ export default function Login() {
               <img src="/images/moonton-white.svg" alt="" />
               <div className="my-[70px]">
                   <div className="font-semibold text-[26px] mb-3">
-                      Welcome Back
+                      Sign Up
                   </div>
                   <p className="text-base text-[#767676] leading-7">
                       Explore our new movies and get <br/>
@@ -27,39 +27,52 @@ export default function Login() {
               <form className="w-[370px]">
                   <div className="flex flex-col gap-6">
                       <div>
-                          <Label 
-                            forInput="email"
-                            value="Email Address"
+                          <Label
+                            forInput='fullname'
+                            value='Full Name'
                           />
                           <Input
-                            type="email"
-                            name="email"
-                            placeholder="Email Address"
+                            type="text"
+                            name="fullname"
+                            placeholder="Your fullname..."
+                            defaultValue="Andri"
                           />
                       </div>
                       <div>
-                          <Label 
-                            forInput="password"
-                            value="Password"
+                          <Label
+                            forInput='email'
+                            value='Email Address'
+                          />
+                          <Input
+                            type="text"
+                            name="email"
+                            placeholder="Your email address..."
+                            defaultValue="andri@andri.com"
+                          />
+                      </div>
+                      <div>
+                          <Label
+                            forInput='password'
+                            value='Password'
                           />
                           <Input
                             type="password"
                             name="password"
-                            placeholder="Password"
+                            placeholder="Your password"
                           />
                       </div>
                   </div>
                   <div className="grid space-y-[14px] mt-[30px]">
-                      <Button type='button' variant='primary'>
+                      <Button>
                         <span className="text-base font-semibold">
-                          Start Watching
+                          Sign Up
                         </span>
                       </Button>
 
-                      <Link href={route('prototype.register')}>
-                        <Button type='button' variant='light-outline'>
+                      <Link href={route("prototype.login")}>
+                        <Button variant='light-outline'>
                           <span className="text-base text-white">
-                            Create New Account
+                            Sign In to My Account
                           </span>
                         </Button>
                       </Link>
@@ -69,5 +82,5 @@ export default function Login() {
       </div>
     </div>
     </>
-  );
+  )
 }
