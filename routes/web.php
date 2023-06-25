@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,8 +35,11 @@ Route::redirect('/', '/login');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route untuk user
-Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard')->group(function () {
+Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    
+    // {movie:slug} ini artinya ambil slug dari table movie, bisa juga ambil field lain
+    Route::get('movie/{movie:slug}', [MovieController::class, 'show'])->name('movie.show');
 });
 
 Route::prefix('prototype')->name('prototype.')->group(function () {
