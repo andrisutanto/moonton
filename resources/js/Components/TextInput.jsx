@@ -11,7 +11,7 @@ TextInput.propTypes = {
     autoComplete: PropTypes.string,
     required: PropTypes.bool,
     isFocused: PropTypes.bool,
-    handleChange: PropTypes.func,
+    onChange: PropTypes.func,
     placeholder: PropTypes.string,
     isError: PropTypes.bool,
 }
@@ -27,7 +27,7 @@ export default function TextInput({
     autoComplete,
     required,
     isFocused, 
-    handleChange,
+    onChange,
     placeholder,
     isError,
     ...props 
@@ -53,7 +53,7 @@ export default function TextInput({
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => handleChange(e)}
+                onChange={(e) => onChange(e)}
                 placeholder={placeholder}
             />
         </div>
