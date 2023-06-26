@@ -1,18 +1,21 @@
 import Sidebar from '@/Layouts/Authenticated/Sidebar'
 import Topbar from '@/Layouts/Authenticated/Topbar'
+import { usePage } from '@inertiajs/react'
 
-export default function Authenticated({children}) {
+export default function Authenticated({user,children}) {
+	const { auth } = usePage().props
+	// console.log(auth);
     return <>
       <div className="mx-auto max-w-screen hidden lg:block">
         {/* START: SIdebar */}
-		<Sidebar />
+		<Sidebar auth={auth}/>
         {/* END: SIdebar */}
 
         {/* Start COntent */}
         <div className="ml-[300px] px-[50px]">
             <div className="py-10 flex flex-col gap-[50px]">
                 {/* Start Top Bar */}
-				<Topbar />
+				<Topbar user={user} />
                 {/* End Top Bar */}
                 <main>{children}</main>
             </div>
