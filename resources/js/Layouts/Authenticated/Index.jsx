@@ -4,7 +4,8 @@ import { usePage } from '@inertiajs/react'
 
 export default function Authenticated({user,children}) {
 	const { auth } = usePage().props
-	// console.log(auth);
+	//console.log(auth);
+  //console.log(auth.user.name);
     return <>
       <div className="mx-auto max-w-screen hidden lg:block">
         {/* START: SIdebar */}
@@ -15,7 +16,7 @@ export default function Authenticated({user,children}) {
         <div className="ml-[300px] px-[50px]">
             <div className="py-10 flex flex-col gap-[50px]">
                 {/* Start Top Bar */}
-				<Topbar user={user} />
+				<Topbar user={auth.user.name} />
                 {/* End Top Bar */}
                 <main>{children}</main>
             </div>

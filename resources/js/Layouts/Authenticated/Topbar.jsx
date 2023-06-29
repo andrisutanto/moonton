@@ -25,7 +25,7 @@ export default function Topbar({user}) {
 			placeholder="Search movie, cast, genre"
 		/>
 		<div className="flex items-center gap-4">
-			<span className="text-black text-sm font-medium">Welcome, {user.name}</span>
+			<span className="text-black text-sm font-medium">Welcome, {user}</span>
 			<div className="collapsible-dropdown flex flex-col gap-2 relative">
 				<div 
 					className="outline outline-2 outline-gray-2 p-[5px] rounded-full w-[60px] dropdown-button" 
