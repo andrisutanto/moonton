@@ -12,6 +12,8 @@
 // }
 
 export default function Checkbox({
+    name,
+    value,
     className = "",
     checked = false,
     ...props
