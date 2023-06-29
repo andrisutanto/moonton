@@ -56,4 +56,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+    // kalau gagal login dan perlu logout
+    // Route::get('logout', [AuthenticatedSessionController::class, 'destroy'])
+    //             ->name('logout');
 });
